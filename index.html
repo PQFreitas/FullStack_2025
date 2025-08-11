@@ -1,171 +1,36 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Portfólio de Pedro</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background: #f4f4f4;
-            margin: 0;
-            padding: 0;
-            color: #222;
-        }
-        header {
-            background: #222;
-            color: #fff;
-            padding: 2rem 0;
-            text-align: center;
-        }
-        nav {
-            margin-top: 1rem;
-        }
-        nav a {
-            color: #fff;
-            margin: 0 1rem;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.2s;
-        }
-        nav a:hover {
-            color: #00bcd4;
-        }
-        .container {
-            max-width: 900px;
-            margin: 2rem auto;
-            background: #fff;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-        }
-        h2 {
-            color: #00bcd4;
-            margin-top: 2rem;
-        }
-        .projetos {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1rem;
-        }
-        .projeto {
-            background: #f9f9f9;
-            border-radius: 6px;
-            padding: 1rem;
-            box-shadow: 0 1px 4px rgba(0,0,0,0.04);
-            transition: transform 0.2s;
-        }
-        .projeto:hover {
-            transform: translateY(-5px) scale(1.03);
-        }
-        .projeto h3 {
-            margin-top: 0;
-            color: #222;
-        }
-        .projeto a {
-            color: #00bcd4;
-            text-decoration: none;
-        }
-        footer {
-            text-align: center;
-            padding: 1rem 0;
-            background: #222;
-            color: #fff;
-            margin-top: 2rem;
-        }
-        @media (max-width: 600px) {
-            .container {
-                padding: 1rem;
-            }
-            .projetos {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="icon" href="data:image/png;base64,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" type="image/x-icon">
 </head>
 <body>
-    <header>
-        <h1>Pedro Quadros</h1>
-        <p>Desenvolvedor Full Stack</p>
-        <nav>
-            <a href="#sobre">Sobre</a>
-            <a href="#projetos">Projetos</a>
-            <a href="#contato">Contato</a>
-        </nav>
-    </header>
-    <div class="container">
-        <section id="sobre">
-            <h2>Sobre Mim</h2>
-            <p>Olá! Sou Pedro, desenvolvedor apaixonado por tecnologia e inovação. Tenho experiência em desenvolvimento web, backend e frontend, utilizando as principais tecnologias do mercado.</p>
-        </section>
-        <section id="projetos">
-            <h2>Projetos</h2>
-            <div class="projetos" id="lista-projetos">
-                <!-- Projetos serão inseridos via JavaScript -->
-            </div>
-        </section>
-        <section id="contato">
-            <h2>Contato</h2>
-            <form id="form-contato">
-                <label>Nome:<br>
-                    <input type="text" name="nome" required>
-                </label><br><br>
-                <label>Email:<br>
-                    <input type="email" name="email" required>
-                </label><br><br>
-                <label>Mensagem:<br>
-                    <textarea name="mensagem" rows="4" required></textarea>
-                </label><br><br>
-                <button type="submit">Enviar</button>
-            </form>
-            <div id="mensagem-sucesso" style="display:none;color:green;margin-top:1rem;">
-                Mensagem enviada com sucesso!
-            </div>
-        </section>
-    </div>
-    <footer>
-        &copy; 2024 Pedro Silva. Todos os direitos reservados.
-    </footer>
-    <script>
-        // Lista de projetos (adicione mais conforme necessário)
-        const projetos = [
-            {
-                titulo: "Site de Receitas",
-                descricao: "Aplicação web para compartilhar e buscar receitas culinárias.",
-                link: "#"
-            },
-            {
-                titulo: "ToDo List",
-                descricao: "Lista de tarefas simples com funcionalidades de adicionar, remover e marcar como concluída.",
-                link: "#"
-            },
-            {
-                titulo: "Portfólio Responsivo",
-                descricao: "Este próprio portfólio, feito com HTML, CSS e JavaScript puro.",
-                link: "#"
-            }
-        ];
+    <h1>Minhas Receitas</h1>
+    <li>
+        <a href="receitas/receita_bolo.html">Receita de Bolo</a>
+    </li>
+        <img src="https://i.pinimg.com/originals/e9/fe/5a/e9fe5adea8d7301057132b7f830a0fb4.gif"
+        alt=""
+        width="300">
 
-        // Renderiza os projetos na página
-        const listaProjetos = document.getElementById('lista-projetos');
-        projetos.forEach(proj => {
-            const div = document.createElement('div');
-            div.className = 'projeto';
-            div.innerHTML = `
-                <h3>${proj.titulo}</h3>
-                <p>${proj.descricao}</p>
-                <a href="${proj.link}" target="_blank">Ver projeto</a>
-            `;
-            listaProjetos.appendChild(div);
-        });
+    <br>
 
-        // Simulação de envio de formulário de contato
-        document.getElementById('form-contato').addEventListener('submit', function(e) {
-            e.preventDefault();
-            document.getElementById('mensagem-sucesso').style.display = 'block';
-            this.reset();
-        });
-    </script>
+    <li>
+        <a href="receitas/receita_pizza.html">Receita de Pizza</a>
+    </li>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlupSk0hcaZadqZriR5mqdGUM0F2Idr0OTOA&s"
+    alt=""
+    width="300">
+
+    <br>
+
+    <li>
+        <a href="receitas/receita_salada.html">Receita de Salada</a>
+    </li>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNCzjpYY4B7_eM8b-BeEffZS5rNz1TNQe4AA&s"
+    alt=""
+    width="300">
 </body>
 </html>
